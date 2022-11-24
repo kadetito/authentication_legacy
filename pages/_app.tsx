@@ -12,13 +12,13 @@ import type { AppProps } from "next/app";
 
 import { AuthProvider } from "../context/auth";
 
-const messages = {
+const messages: any = {
   es,
   en,
 };
 
 export default function App({ Component, pageProps }: AppProps) {
-  const { locale } = useRouter();
+  const { locale = "" } = useRouter();
   return (
     <SessionProvider>
       <IntlProvider locale={locale} messages={messages[locale]}>
