@@ -113,7 +113,7 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
 
         // Methods
         loginUser,
-        registerUser,
+
         logout,
       }}
     >
