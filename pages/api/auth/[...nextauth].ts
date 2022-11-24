@@ -23,7 +23,7 @@ export default NextAuth({
           placeholder: "Contraseña",
         },
       },
-      async authorize(credentials) {
+      async authorize(credentials): Promise<any> {
         return await dbUsers.checkUserEmailPassword(
           credentials!.email,
           credentials!.password
@@ -69,7 +69,7 @@ export default NextAuth({
       }
       return token;
     },
-    async session({ session, token, user }) {
+    async session({ session, token, user }: any) {
       session.accessToken = token.accessToken;
       session.user = token.user as any;
       return session;

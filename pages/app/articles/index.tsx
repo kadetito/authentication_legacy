@@ -5,7 +5,10 @@ import { ContentLayout } from "../../../layouts";
 const Articles = () => {
   // console.log( locale );
   return (
-    <ContentLayout>
+    <ContentLayout
+      title="page.home.head.title"
+      description="page.home.head.meta.description"
+    >
       <LogoutButton />
       <NextLink href="/app/dashboard">dashboard</NextLink>
     </ContentLayout>
