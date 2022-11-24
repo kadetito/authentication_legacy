@@ -1,0 +1,42 @@
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0 auto;
+  font-family: Arial;
+  background-color: #f0ecea;
+  color: #000000;
+}
+
+.form-container {
+  margin: 15% auto;
+  display: block;
+  width: auto;
+  text-align: center;
+
+  .form-control {
+    border-radius: 0px;
+  }
+  label {
+    font-weight: bold;
+    font-size: 14px;
+  }
+  .card {
+    box-shadow: 16px 16px;
+  }
+
+  @media (max-width: 768px) {
+    .card {
+      box-shadow: 2px 2px;
+    }
+  }
+
+  .bg-red {
+    border: 1px solid red;
+    color: red;
+  }
+
+  .bg-red::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: red;
+    opacity: 1; /* Firefox */
+  }
+}
