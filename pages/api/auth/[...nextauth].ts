@@ -23,11 +23,18 @@ export default NextAuth({
           placeholder: "Contraseña",
         },
       },
-      async authorize(credentials): Promise<any> {
-        return await dbUsers.checkUserEmailPassword(
-          credentials!.email,
-          credentials!.password
-        );
+      async authorize(credentials) {
+        const res = await fetch("http://localhost:3000/api/hello", {
+          method: "POST",
+          body: JSON.stringify(credentials),
+          headers: { "Content-Type": "application/json" },
+        });
+        const user = await res.json();
+
+        if (res.ok && user) {
+          return user;
+        }
+        return null;
       },
     }),
 
