@@ -6,7 +6,7 @@ import { db } from "./";
 export const checkUserEmailPassword = async (
   email: string,
   password: string
-) => {
+): Promise<any> => {
   await db.connect();
   const user = await User.findOne({ email });
   await db.disconnect();
