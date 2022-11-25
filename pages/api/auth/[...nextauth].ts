@@ -2,11 +2,7 @@ import NextAuth from "next-auth";
 import GithubProvider from "next-auth/providers/github";
 import Credentials from "next-auth/providers/credentials";
 import { dbUsers } from "../../../database";
-declare module "next-auth" {
-  interface Session {
-    accessToken?: string;
-  }
-}
+
 export default NextAuth({
   providers: [
     Credentials({
@@ -36,7 +32,7 @@ export default NextAuth({
       clientSecret: process.env.GITHUB_SECRET!,
     }),
   ],
-  secret: process.env.SECRET,
+
   //custom pages
   pages: {
     signIn: "/auth/login",
@@ -69,7 +65,7 @@ export default NextAuth({
       }
       return token;
     },
-    async session({ session, token, user }: any) {
+    async session({ session, token, user }) {
       session.accessToken = token.accessToken;
       session.user = token.user as any;
       return session;
