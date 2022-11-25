@@ -8,7 +8,7 @@ import en from "../lang/en.json";
 import es from "../lang/es.json";
 
 import type { AppProps } from "next/app";
-// import { SWRConfig } from "swr";
+import { SWRConfig } from "swr";
 
 import { AuthProvider } from "../context/auth";
 
@@ -22,18 +22,18 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <SessionProvider>
       <IntlProvider locale={locale} messages={messages[locale]}>
-        {/* <SWRConfig
-        value={{
-          fetcher: (
-            resource: RequestInfo | URL,
-            init: RequestInit | undefined
-          ) => fetch(resource, init).then((res) => res.json()),
-        }}
-      > */}
-        <AuthProvider>
-          <Component {...pageProps} />
-        </AuthProvider>
-        {/* </SWRConfig> */}
+        <SWRConfig
+          value={{
+            fetcher: (
+              resource: RequestInfo | URL,
+              init: RequestInit | undefined
+            ) => fetch(resource, init).then((res) => res.json()),
+          }}
+        >
+          <AuthProvider>
+            <Component {...pageProps} />
+          </AuthProvider>
+        </SWRConfig>
       </IntlProvider>
     </SessionProvider>
   );
