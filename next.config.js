@@ -1,11 +1,9 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-};
 
-module.exports = {
-  nextConfig,
   i18n: {
     // These are all the locales you want to support in
     // your application
@@ -19,3 +17,5 @@ module.exports = {
     localeDetection: false,
   },
 };
+
+module.exports = nextConfig;

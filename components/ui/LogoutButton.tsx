@@ -13,13 +13,15 @@ export const LogoutButton = () => {
   };
   return (
     <>
-      {isLoggedIn ? (
-        <Button onClick={logout}>Logout</Button>
-      ) : (
+      {/* {isLoggedIn ? ( */}
+      <Button id="logoutbutton" onClick={logout}>
+        Logout
+      </Button>
+      {/* ) : (
         <Button onClick={() => navigateTo(`/auth/login?p=${router.asPath}`)}>
           Login
         </Button>
-      )}
+      )} */}
     </>
   );
 };

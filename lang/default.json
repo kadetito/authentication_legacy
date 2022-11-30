@@ -1,6 +1,23 @@
 {
-    "page.home.head.title": "Next.js i18n Ejemplo",
-    "page.home.head.meta.description": "Next.js i18n example - Español",
-    "page.home.title": "Bienvenidos a esta movida",
-    "page.home.description": "Estás viendo the homepage in English 🚀"
+
+
+  "page.auth.head.title": "Sistema de Autenticación",
+  "page.auth.head.meta.description": "Sistema de Autenticación para Module Federation en NextJS - Español",
+  "page.auth.title": "Bienvenidos al Panel Admin",
+  "page.auth.description": "Puedes escoger tu idioma",
+
+  "page.home.head.title": "Sistema de Autenticación",
+  "page.home.head.meta.description": "Sistema de Autenticación para Module Federation en NextJS - Español",
+  "page.home.title": "Bienvenidos al Panel Admin",
+  "page.home.description": "Puedes escoger tu idioma 🚀",
+
+  "page.auth.text.danger": "alerta",
+  "page.auth.text.label.email": "Email",    
+  "page.auth.text.place.enteremail": "Escriba E-mail",
+ 
+  "page.auth.text.error.camporequerido":  "Este campo es requerido",
+  "page.auth.text.place.enhterpassword":"Escriba password",
+  "page.auth.text.error.minimocaracters": "Debe haber un mínimo de 8 caracteres",
+  "page.auth.text.label.password": "Password",
+  "page.auth.text.button.identification": "Identificación"
   }

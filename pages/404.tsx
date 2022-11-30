@@ -2,10 +2,7 @@ import { AuthLayout } from "../layouts";
 
 const Custom404 = () => {
   return (
-    <AuthLayout
-      title="page.home.head.title"
-      description="page.home.head.meta.description"
-    >
+    <AuthLayout title="404 not found" description="página no encontrada">
       <h1>404 |</h1>
     </AuthLayout>
   );

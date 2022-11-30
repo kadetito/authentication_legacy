@@ -1,5 +1,12 @@
 import Dashboard from "./app/dashboard";
 
-export default function Home() {
-  return <Dashboard />;
-}
+const Home = () => {
+  return (
+    <span data-testid="home">
+      {/* <Dashboard /> */}
+      HOLA
+    </span>
+  );
+};
+
+export default Home;

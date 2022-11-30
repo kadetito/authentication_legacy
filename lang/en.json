@@ -1,6 +1,22 @@
 {
+
+    "page.auth.head.title": "Authentication System",
+    "page.auth.head.meta.description": "Authentication System for Module Federation in NextJS - English",
+    "page.auth.title": "Welcome to this Admin panel",
+    "page.auth.description": "You can choose your prefer language",
+
     "page.home.head.title": "Authentication System",
     "page.home.head.meta.description": "Next.js i18n example - English",
     "page.home.title": "Welcome to <b>Next.js i18n tutorial</b>",
-    "page.home.description": "You are currently viewing the homepage in English 🚀"
+    "page.home.description": "You are currently viewing the homepage in English 🚀",
+
+    "page.auth.text.danger": "danger",
+    "page.auth.text.label.email": "Email address",    
+    "page.auth.text.place.enteremail": "Enter E-mail",
+   
+    "page.auth.text.error.camporequerido":  "Required field",
+    "page.auth.text.place.enhterpassword":"Enter password",
+    "page.auth.text.error.minimocaracters": "There must be a minimum of 8 characters",
+    "page.auth.text.label.password": "Password",
+    "page.auth.text.button.identification": "Identification"
   }

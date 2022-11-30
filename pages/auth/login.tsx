@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { GetServerSideProps } from "next";
-import NextLink from "next/link";
-import { useForm } from "react-hook-form";
-import { signIn, getSession, getProviders, useSession } from "next-auth/react";
 
+import { useForm } from "react-hook-form";
+import { signIn, getSession, getProviders } from "next-auth/react";
 import { AuthLayout } from "../../layouts";
 import { validations } from "../../utils";
 import { useRouter } from "next/router";
@@ -16,8 +15,6 @@ import {
   Container,
   Card,
 } from "react-bootstrap";
-import { LogoutButton } from "../../components";
-import Dashboard from "../app/dashboard";
 
 type FormData = {
   email: string;
@@ -26,7 +23,7 @@ type FormData = {
 
 const LoginPage = () => {
   const router = useRouter();
-  const { status } = useSession();
+  // const { status } = useSession();
 
   const {
     register,
@@ -46,7 +43,6 @@ const LoginPage = () => {
 
   const onLoginUser = async ({ email, password }: FormData) => {
     setShowError(false);
-
     await signIn("credentials", { email, password });
   };
 
@@ -55,8 +51,8 @@ const LoginPage = () => {
 
   return (
     <AuthLayout
-      title="page.home.head.title"
-      description="page.home.head.meta.description"
+      title="page.auth.head.title"
+      description="page.auth.head.meta.description"
     >
       <Container>
         <Row>
@@ -75,17 +71,17 @@ const LoginPage = () => {
                   className="mb-3 text-start"
                   controlId="formBasicEmail"
                 >
-                  <Form.Label>Email address</Form.Label>
+                  <Form.Label>E-mail</Form.Label>
                   <Form.Control
                     type="email"
                     onFocus={() => setAttribute(false)}
                     readOnly={attribute}
-                    placeholder="Enter email"
+                    placeholder="Enter e-mail"
                     style={{
                       backgroundColor: !!errors.email ? "red" : "white",
                     }}
                     {...register("email", {
-                      required: "Este campo es requerido",
+                      required: "campor requerido",
                       validate: validations.isEmail,
                     })}
                   />
@@ -103,15 +99,15 @@ const LoginPage = () => {
                     type="password"
                     onFocus={() => setAttribute(false)}
                     readOnly={attribute}
-                    placeholder="Enter password"
+                    placeholder="Introduzca el password"
                     style={{
                       backgroundColor: !!errors.password ? "red" : "white",
                     }}
                     {...register("password", {
-                      required: "Este campo es requerido",
+                      required: "campo requerido",
                       minLength: {
                         value: 6,
-                        message: "Debe haber un mínimo de 8 caracteres",
+                        message: "debe tener al menos 8 caracteres",
                       },
                     })}
                   />
@@ -121,14 +117,8 @@ const LoginPage = () => {
                 </Form.Group>
                 <Row>
                   <Col className="d-grid gap-2">
-                    <Button
-                      type="submit"
-                      variant="primary"
-                      color="primary"
-
-                      // onClick={() => signIn(provider.id)}
-                    >
-                      Identification
+                    <Button type="submit" variant="primary" color="primary">
+                      Identificacion
                     </Button>
                   </Col>
                 </Row>
